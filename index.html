@@ -47,7 +47,10 @@
            if (userGuess === computerGuess) {
               wins++;
             } else if (
-              losses++, guesses--);
+              guesses--);
+           if (guesses === 0) {
+             losses++;
+           }  
 
             userChoiceText.textContent = "You chose: " + userGuess;
             computerChoiceText.textContent = "The computer chose: " + computerGuess;
