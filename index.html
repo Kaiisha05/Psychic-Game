@@ -30,9 +30,9 @@
         var losses = 0;
         var guesses = 9;
     
-    for(var i = 0; i < letters.length; i++) {
+    // for(var i = 0; i < letters.length; i++) {
     
-    }
+    // }
   
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("computerchoice-text");
@@ -44,14 +44,24 @@
         document.onkeyup = function(event) {
           var userGuess = event.key   
           var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+          
            if (userGuess === computerGuess) {
               wins++;
-            } else if (
-              guesses--);
-           if (guesses === 0) {
+              guesses = 9;
+           }
+           else if (guesses === 0) {
+            //  console.log('I am the second condition..')
              losses++;
+             guesses = 9;
            }  
-
+          else {
+            // console.log('guesses going down..')
+            if (guesses === 0) {
+        
+            }
+            guesses--;
+          }
+        
             userChoiceText.textContent = "You chose: " + userGuess;
             computerChoiceText.textContent = "The computer chose: " + computerGuess;
             winsText.textContent = "Wins: " + wins;
